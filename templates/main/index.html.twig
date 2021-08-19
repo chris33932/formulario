@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}{{ parent() }}
+<div class="container">
+    <h2>Hola </h2>
+    {{form_start(form)}}
+      {{form_row(form.fullname)}}
+
+                {# {{dump(form)}} #} 
+                <div class="col-sm-8 col-sm-offset-2" id="exp_list" data-prototype="{{form_widget(form.exp.vars.prototype)|e('html_attr') }}"
+                {% for row in form.exp %}
+                {# {{ item.children.title.vars.value}} #} 
+
+                <li> {{ form_row(row)}} </li>
+
+                {% endfor %}
+
+     
+</div>
+{{ form_end(form) }}
+{% endblock %}
